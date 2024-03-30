@@ -156,6 +156,11 @@ var VideoPlayer = (function (document) {
       // - Consider replacing with a loading indicator until loaded fully.
       fadeOutRemove(e.target);
 
+      iframe.setAttribute("src", `/videos/${videoId}`);
+      // set additional attributes for better video control
+      iframe.setAttribute("controls", "");
+      iframe.setAttribute("autoplay", "");
+
       // Chrome will ignore autoplay and make the user click twice
       iframe.setAttribute(
         "src",

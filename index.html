@@ -1,7 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Video Listing example using Youtube IDs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="./style.css">
+
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<!-- partial:index.partial.html -->
+<section class="uol-section uol-section--primary">
+  <h1 class="uol-h1 p-lr-20 center">Lincoln on Demand</h1>
+  <p class="uol-t1 p-lr-20 center">Catch up on all the latest video content we've produced.</p>
+</section>
+<section class="uol-section">
+  <div class="center">
+    <div class="uol-input-cnt">
+      <label class="uol-label">Filter <span class="visually-hidden">by category</span></label>
+      <select class="uol-input" id="filter">
+        <option value="" selected>Pick a topic</option>
+        <option value="computer science">Computer Science</option>
+        <option value="sport science">Sport Science</option>
+        <option value="applying">Applying</option>
+        <option value="live lounge">Live Lounge</option>
+
+      </select>
+    </div>
+    <div class="uol-input-cnt">
+      <label class="uol-label" for="#searchBar">Search <span class="visually-hidden">for a video</span></label>
+      <input class="uol-input" id="searchBar" type="text" />
+    </div>
+  </div>
+  <ul class="grid p-lr-20">
+    <li class="tile tile-half" data-videoCategory="Computer Science" data-videotitle="The Next Generation of Gaming" data-videoid="fIFDfzW6B_g"></li>
+    <li class="tile" data-videoCategory="sport science" data-videotitle="What Careers Can a Degree in Sport, Exercise or Health Set You up For?" data-videoid="RydlGfaHVtg"></li>
+    <li class="tile" data-videoid="SBuOut6EQPQ" data-videotitle="Writing Your Personal Statement" data-videocategory="applying"></li>
+    <li class="tile" data-videoid="aGbjQmqNSkw" data-videotitle="US Elections Roundtable Discussion" data-videocategory="live lounge">
+    </li>
+    <li class="tile" data-videoid="KqfjgR75UhQ" data-videotitle="Crime and Punishment - A History of Criminology" data-videocategory="live lounge"></li>
+    <li class="tile" data-videoid="n5PVSMfwW2U" data-videotitle="Poetry with Carol Ann Duffy" data-videocategory="live lounge"></li>
+    <li class="tile tile-half" data-videoid="6iEF14DIqTc" data-videotitle="Tackling Environmental Challenges with Chris Packham" data-videocategory="live lounge"></li>
+    <li class="tile" data-videoid="9JWX7Ln-a1M" data-videotitle="Parents' Talk" data-videocategory="live lounge"></li>
+    <li class="tile" data-videoid="1klcUaiswQU" data-videotitle="Top Tips on Making the Most of University" data-videocategory="live lounge"></li>
+    <li class="tile" data-videoid="PUM9qeazUxc" data-videotitle="Live Lounge with Danny and Nicky Cowley - Business and Leadership" data-videocategory="live lounge"></li>
+  </ul>
+</section>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
 </body>
 </html>

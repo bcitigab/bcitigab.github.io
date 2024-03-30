@@ -93,6 +93,10 @@ var VideoPlayer = (function (document) {
     if (!videoId) return;
 
     const img = document.createElement("img");
+    const imgSrc = "YOUR_THUMBNAIL_IMAGE_PATH_HERE"; // change this to the path of your video thumbnail
+    img.src = imgSrc;
+
+    const img = document.createElement("img");
     const imgSrc = "https://i.ytimg.com/vi/" + videoId + "/maxresdefault.jpg";
     img.src = imgSrc;
 
@@ -122,68 +126,43 @@ var VideoPlayer = (function (document) {
     const playBtn = document.createElement("button");
     playBtn.type = "button";
     playBtn.classList.add("video_btn");
-    playBtn.setAttribute(
-      "aria-label",
-      "Play video: " + video.dataset.videotitle
-    );
+    playBtn.setAttribute("aria-label", "Play video: " + video.dataset.videotitle);
     playBtn.setAttribute("aria-pressed", false);
-    playBtn.innerHTML =
-      '<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="none" viewBox="0 0 60 60"><path class="play" fill="#fff" d="M35.394 31.046l-9.544 5.538c-.81.469-1.85-.1-1.85-1.046V24.462c0-.945 1.038-1.515 1.85-1.044l9.544 5.538a1.203 1.203 0 010 2.09z"/><circle class="circle" cx="30" cy="30" r="28" stroke="#fff" stroke-width="4"/></svg>';
-
-    // Remove listener if late-loading the image (leave its content in play)
+    playBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="none" viewBox="0 0 60 60"><!-- ... --></svg>';
+  
     img.addEventListener(
       "load",
       (_) => {
         wrapper.style = `background-image: url('${imgSrc}');`;
         wrapper.appendChild(playBtn);
-        wrapper.appendChild(caption);
-        video.appendChild(wrapper);
       },
       { once: true }
     );
-
-    const iframe = document.createElement("iframe");
-    iframe.className = "video_iframe";
-    iframe.setAttribute("frameborder", 0);
-    iframe.setAttribute("allowfullscreen", "");
-    iframe.setAttribute("title", "YouTube video of " + title);
-
+  
+    const videoTag = document.createElement("video");
+    videoTag.className = "video_source";
+    videoTag.setAttribute("controls", "");
+  
+    const sourceTag = document.createElement("source");
+    sourceTag.setAttribute("src", videoId);
+    sourceTag.setAttribute("type", "video/mp4");
+    videoTag.appendChild(sourceTag);
+  
     const getFrame = (e) => {
-      if (e.target.querySelector(".video_iframe")) return;
-
-      // Fade out and remove the button immediately
-      // - Indicates action underway on slow networks
-      // - Consider replacing with a loading indicator until loaded fully.
+      if (e.target.querySelector(".video_source")) return;
       fadeOutRemove(e.target);
-
-      iframe.setAttribute("src", `/videos/${videoId}`);
-      // set additional attributes for better video control
-      iframe.setAttribute("controls", "");
-      iframe.setAttribute("autoplay", "");
-
-      // Chrome will ignore autoplay and make the user click twice
-      iframe.setAttribute(
-        "src",
-        "https://www.youtube.com/embed/" +
-          videoId +
-          "?rel=0&showinfo=0&autoplay=1"
-      );
-
-      // On iframe load - fade out image and title
-      iframe.addEventListener(
+  
+      video.prepend(videoTag);
+  
+      videoTag.addEventListener(
         "load",
         (_) => {
           fadeOutRemove(wrapper);
-        },
+        }, 
         { once: true }
       );
-
-      // Place iframe behind the video_img (until fully loaded)
-      video.prepend(iframe);
     };
-
-    video.setAttribute("tabindex", 0);
-    video.setAttribute("aria-title", "Video module: " + title);
+  
     video.addEventListener("click", getFrame, { once: true });
   };
 

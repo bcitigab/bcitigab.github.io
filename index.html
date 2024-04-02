@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <title>Babillard B-Citi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="./style.css">
+  <link href="https://vjs.zencdn.net/7.15.4/video-js.css" rel="stylesheet" />
+  <script src="https://vjs.zencdn.net/7.15.4/video.min.js"></script>
   <script>var supportsES6 = (function () {
     try {
       new Function("(a=0)=>a");
@@ -370,10 +372,10 @@
     </div>
   </div>
   <ul class="grid p-lr-20">
-    <li class="tile tile-half videoContainer" data-videoCategory="famille" data-videotitle="Un été inoubliablea vec les camps de jour de Brossard!">
-      <video width="770" height="370" controls>
-          <source src="videos/video1.mp4" type="video/mp4">
-          Your browser does not support the video tag.
+    <li class="tile tile-half" data-video-category="famille" data-video-title="Un été inoubliablea vec les camps de jour de Brossard!">
+      <video id="my-video" class="video-js vjs-default-skin" controls preload="auto" width="640" height="264"
+      poster="URL to video poster" data-setup="{}">
+          <source src="videos/video1.mp4" type='video/mp4'>
       </video>
   </li>
     <li class="tile" data-videoid="VKJ_eecMmxw" data-videotitle="Séance du conseil municipal | 19 mars 2024" data-videocategory="municipales"></li>

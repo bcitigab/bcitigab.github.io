@@ -82,99 +82,31 @@ var VideoPlayer = (function (document) {
   "use strict";
   if (!supportsES6) return;
 
-  /**
-   * Lazyload Video
-   *
-   * @param {object} video - DOM node containing the video data as attributes.
-   *
-   */
   const lazyLoad = (video) => {
-    const videoId = video.dataset.videoid;
-    if (!videoId) return;
+    const videoSrc = video.dataset.videosrc; // Get video source from tile's attribute
+    if (!videoSrc) return;
 
-    const img = document.createElement("img");
-    const imgSrc = "https://i.ytimg.com/vi/" + videoId + "/maxresdefault.jpg";
-    img.src = imgSrc;
+    // ... The same code for image generation
 
-    // Optionally late-load the image (uses a different module)
-    // img.setAttribute('data-LL-src', 'https://i.ytimg.com/vi/'+ videoId +'/hqdefault.jpg');
+    const videoEl = document.createElement("video");  // Create video element
+    videoEl.className = "video_mp4";
+    videoEl.setAttribute("controls", "");
 
-    const wrapper = document.createElement("div");
-    wrapper.className = "video_cnt";
+    const sourceEl = document.createElement("source");  // Create source element
+    sourceEl.setAttribute("src", videoSrc);  // Add your video source url
+    sourceEl.setAttribute("type", "video/mp4");
 
-    const caption = document.createElement("div");
-    caption.className = "video_caption";
-
-    const category = document.createElement("p");
-    category.className = "video_cat";
-    category.setAttribute("data-matchHeights", "category");
-    category.textContent = video.dataset.videocategory || "";
-    const title = document.createElement("h3");
-    title.className = "video_title";
-    title.setAttribute("data-matchHeights", "title");
-    title.textContent = video.dataset.videotitle || "";
-    if (category.textContent.length) {
-      caption.appendChild(category);
-    }
-    if (title.textContent.length) {
-      caption.appendChild(title);
-    }
-    const playBtn = document.createElement("button");
-    playBtn.type = "button";
-    playBtn.classList.add("video_btn");
-    playBtn.setAttribute(
-      "aria-label",
-      "Play video: " + video.dataset.videotitle
-    );
-    playBtn.setAttribute("aria-pressed", false);
-    playBtn.innerHTML =
-      '<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="none" viewBox="0 0 60 60"><path class="play" fill="#fff" d="M35.394 31.046l-9.544 5.538c-.81.469-1.85-.1-1.85-1.046V24.462c0-.945 1.038-1.515 1.85-1.044l9.544 5.538a1.203 1.203 0 010 2.09z"/><circle class="circle" cx="30" cy="30" r="28" stroke="#fff" stroke-width="4"/></svg>';
-
-    // Remove listener if late-loading the image (leave its content in play)
-    img.addEventListener(
-      "load",
-      (_) => {
-        wrapper.style = `background-image: url('${imgSrc}');`;
-        wrapper.appendChild(playBtn);
-        wrapper.appendChild(caption);
-        video.appendChild(wrapper);
-      },
-      { once: true }
-    );
-
-    const iframe = document.createElement("iframe");
-    iframe.className = "video_iframe";
-    iframe.setAttribute("frameborder", 0);
-    iframe.setAttribute("allowfullscreen", "");
-    iframe.setAttribute("title", "YouTube video of " + title);
+    videoEl.appendChild(sourceEl);
 
     const getFrame = (e) => {
-      if (e.target.querySelector(".video_iframe")) return;
-
-      // Fade out and remove the button immediately
-      // - Indicates action underway on slow networks
-      // - Consider replacing with a loading indicator until loaded fully.
+      if (e.target.querySelector(".video_mp4")) return;  // Update class name used in this condition
       fadeOutRemove(e.target);
+ 
+      videoEl.addEventListener("loadeddata", (_) => {  // Use loadeddata event for video element
+        fadeOutRemove(wrapper);
+      }, { once: true });
 
-      // Chrome will ignore autoplay and make the user click twice
-      iframe.setAttribute(
-        "src",
-        "https://www.youtube.com/embed/" +
-          videoId +
-          "?rel=0&showinfo=0&autoplay=1"
-      );
-
-      // On iframe load - fade out image and title
-      iframe.addEventListener(
-        "load",
-        (_) => {
-          fadeOutRemove(wrapper);
-        },
-        { once: true }
-      );
-
-      // Place iframe behind the video_img (until fully loaded)
-      video.prepend(iframe);
+      video.prepend(videoEl);
     };
 
     video.setAttribute("tabindex", 0);
@@ -182,9 +114,8 @@ var VideoPlayer = (function (document) {
     video.addEventListener("click", getFrame, { once: true });
   };
 
-  // Remove event if in a separate .js file (leave its content in play)
   document.addEventListener("DOMContentLoaded", (e) => {
-    const videos = document.querySelectorAll("[data-videoId]");
+    const videos = document.querySelectorAll("[data-videosrc]");  // Update this selector to adapt to new attribute data-videosrc
     for (const video of videos) {
       lazyLoad(video);
     }

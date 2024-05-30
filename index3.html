@@ -72,7 +72,7 @@
     'https://raw.githubusercontent.com/bumbeishvili/sample-data/main/data-oracle.csv'
   ).then((data) => {
     chart = new d3.OrgChart()
-      .nodeHeight((d) => 85 + 25)
+      .nodeHeight((d) => 125 + 25)
       .nodeWidth((d) => 220 + 2)
       .childrenMargin((d) => 50)
       .compactMarginBetween((d) => 35)

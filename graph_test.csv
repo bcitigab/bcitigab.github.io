@@ -1,5 +1,5 @@
-id,parentId,name,city,position,image
-100,,CITOYEN,Beaconsfield,Utilisateur,https://bumbeishvili.github.io/avatars/avatars/portrait12.png
+id,parentId,name,city,position,image,data
+100,,CITOYEN,Beaconsfield,Utilisateur,https://bumbeishvili.github.io/avatars/avatars/portrait12.png,"nom,prénom,tel"
 101,100,FORM 1,Beaconsfield,Source de données,https://bumbeishvili.github.io/avatars/avatars/portrait12.png
 102,100,FORM 2,Beaconsfield,Source de données,https://bumbeishvili.github.io/avatars/avatars/portrait12.png
 103,101,MSFT SERVER 1,Beaconsfield,Hébergement / Stockage,https://bumbeishvili.github.io/avatars/avatars/portrait12.png

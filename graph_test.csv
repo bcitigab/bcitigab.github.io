@@ -1,5 +1,5 @@
 id,parentId,name,city,position,image,data
-100,CITOYEN,Beaconsfield,Utilisateur,https://bumbeishvili.github.io/avatars/avatars/portrait12.png, RAMQ\n-NAS\n- Nom\n-Prénom\n- Courriel\n- Tél.\n- Date de naissance\n- Genre\nCamps de jour\n- Info médicale\n- Témoins (cookie)\n- Adresse IP
+100,CITOYEN,Beaconsfield,Utilisateur,https://bumbeishvili.github.io/avatars/avatars/portrait12.png,""
 101,100,FORM 1,Beaconsfield,Source de données,https://cdn-icons-png.flaticon.com/128/2933/2933245.png,"RP: nom,prénom,tél"
 102,100,FORM 2,Beaconsfield,Source de données,https://bumbeishvili.github.io/avatars/avatars/portrait20.png,"RP: nom,prénom,tél"
 103,101,MSFT SERVER 1,Beaconsfield,Hébergement / Stockage,https://bumbeishvili.github.io/avatars/avatars/portrait12.png,""

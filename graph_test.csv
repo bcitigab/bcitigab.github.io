@@ -1,0 +1,13 @@
+id,parentId,name,city,position
+100,,CITOYEN,Beaconsfield,Utilisateur
+101,100,FORM 1,Beaconsfield,Source de données
+102,100,FORM 2,Beaconsfield,Source de données
+103,101,MSFT SERVER 1,Beaconsfield,Hébergement / Stockage
+104,102,MSFT SERVER 2,Beaconsfield,Hébergement / Stockage
+105,103,PG SERVER,Beaconsfield,Hébergement / Stockage
+106,102,DESKTOP,Beaconsfield,Hébergement / Stockage
+107,105,MAIRE,Beaconsfield,Accès
+108,105,DG,Beaconsfield,Accès
+109,105,GREFF,Beaconsfield,Accès
+110,105,ADMIN,Beaconsfield,Accès
+111,105,TECH,Beaconsfield,Accès

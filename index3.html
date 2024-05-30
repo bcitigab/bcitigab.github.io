@@ -112,18 +112,18 @@
       .render();
 
     // Define the buttons after chart initialization
-    const multiNodeButton = document.createElement('button');
-    multiNodeButton.innerHTML = 'Multi Node Connections';
-    multiNodeButton.onclick = () => {
-      if (connectionsAdded) {
-        chart.connections([]).render();
-        connectionsAdded = false;
-      } else {
-        chart.connections([{from:"145",to:"201",label:"Conflicts of interest"}]).render();
-        connectionsAdded = true;
-      }
-    };
-    document.body.appendChild(multiNodeButton);
+    //const multiNodeButton = document.createElement('button');
+    //multiNodeButton.innerHTML = 'Multi Node Connections';
+    //multiNodeButton.onclick = () => {
+    //  if (connectionsAdded) {
+    //    chart.connections([]).render();
+    //    connectionsAdded = false;
+   //   } else {
+    //    chart.connections([{from:"145",to:"201",label:"Conflicts of interest"}]).render();
+   //     connectionsAdded = true;
+   //   }
+   // };
+    //document.body.appendChild(multiNodeButton);
 
     const horizontalButton = document.createElement('button');
     horizontalButton.innerHTML = 'Horizontal';

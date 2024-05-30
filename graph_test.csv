@@ -5,7 +5,7 @@ id,parentId,name,city,position,image,data
 103,101,MSFT SERVER 1,Beaconsfield,Hébergement / Stockage,https://bumbeishvili.github.io/avatars/avatars/portrait12.png,""
 104,102,MSFT SERVER 2,Beaconsfield,Hébergement / Stockage,https://bumbeishvili.github.io/avatars/avatars/portrait12.png,""
 105,103,PG SERVER,Beaconsfield,Hébergement / Stockage,https://bumbeishvili.github.io/avatars/avatars/portrait12.png,""
-106,102,DESKTOP,Beaconsfield,Hébergement / Stockage,https://bumbeishvili.github.io/avatars/avatars/portrait12.png,""
+106,104,DESKTOP,Beaconsfield,Hébergement / Stockage,https://bumbeishvili.github.io/avatars/avatars/portrait12.png,""
 107,105,MAIRE,Beaconsfield,Accès,https://bumbeishvili.github.io/avatars/avatars/portrait12.png,""
 108,105,DG,Beaconsfield,Accès,https://bumbeishvili.github.io/avatars/avatars/portrait12.png,""
 109,105,GREFF,Beaconsfield,Accès,https://bumbeishvili.github.io/avatars/avatars/portrait12.png,""

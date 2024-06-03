@@ -1,3 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Org Chart with Horizontal Scroll</title>
+  <style>
+    .chart-container {
+      width: 100%; /* Line 9: Set the container width */
+      height: 600px; /* Line 10: Set the container height */
+      overflow-x: auto; /* Line 11: Enable horizontal scrolling */
+      overflow-y: hidden; /* Line 12: Disable vertical scrolling */
+      white-space: nowrap; /* Line 13: Prevent content from wrapping */
+      border: 1px solid #ccc; /* Optional: Visualize the container, Line 14 */
+    }
+  </style>
+</head>
+<body>
+  <input
+    type="search"
+    placeholder="search by name"
+    oninput="filterChart(event)"
+  />
+
+  <div class="chart-container"></div> <!-- Line 23: Ensure this class matches the CSS selector -->
+
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/d3-org-chart@3.0.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/d3-flextree@2.1.2/build/d3-flextree.js"></script>

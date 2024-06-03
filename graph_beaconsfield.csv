@@ -100,7 +100,7 @@ id,parentId,name,city,position,image,data
 199,195,Employés de Mailchimp,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
 200,101,Partage de fichiers,Beaconsfield,Source de données,https://bcitigab.github.io/icons/upload.png,"Syged archives: nom, prénom (dossier employé), nom, prénom, adresse (certains litiges), adresses dans le cas de réclamations"
 201,200,Serveur Syged,Beaconsfield,Hébergement / Stockage,https://bcitigab.github.io/icons/folder.png,
-202,201,Serveur Sharepoint de Microsoft,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
+202,201,Serveur Sharepoint de Microsoft,Beaconsfield,Hébergement / Stockage,https://bcitigab.github.io/icons/key.png,
 203,202,Employés de la ville,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
 204,109,Caméra de surveilllance,Beaconsfield,Source de données,https://bcitigab.github.io/icons/upload.png,"Présence physique (image vidéo), tout type d’information personnelle pouvant être transmise audio par un tiers"
 205,204,Serveur et BD de la ville,Beaconsfield,Hébergement / Stockage,https://bcitigab.github.io/icons/folder.png,

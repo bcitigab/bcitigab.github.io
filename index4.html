@@ -1,0 +1,245 @@
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3-org-chart@3.0.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3-flextree@2.1.2/build/d3-flextree.js"></script>
+<script src="https://unpkg.com/html2canvas@1.1.4/dist/html2canvas.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+
+<div class="Title"><h1>Cartographie de Beaconsfield</h1></div>
+<input
+  type="search"
+  placeholder="search by name"
+  oninput="filterChart(event)"
+/>
+
+<div class="chart-container"></div>
+
+<script>
+  let chart;
+  let connectionsAdded = false;
+
+  function filterChart(e) {
+  // Get input value
+  const value = e.srcElement.value.toLowerCase();
+
+  // Clear previous highlighting
+  chart.clearHighlighting();
+
+  // Get chart nodes
+  const data = chart.data();
+
+  // Mark all previously expanded nodes for collapse
+  data.forEach((d) => (d._expanded = false));
+
+  // Loop over data and check if input value matches any name, position, or data
+  data.forEach((d) => {
+    const nameMatches = d.name.toLowerCase().includes(value);
+    const positionMatches = d.position.toLowerCase().includes(value);
+    const dataMatches = d.data.toLowerCase().includes(value);
+    if (value != '' && (nameMatches || positionMatches || dataMatches)) {
+      // If matches, mark node as highlighted
+      d._highlighted = true;
+      d._expanded = true;
+    }
+  });
+
+  // Update data and rerender graph
+  chart.data(data).render().fit();
+
+  console.log('filtering chart', e.srcElement.value);
+}
+
+  function downloadPdf(chart) {
+    chart.exportImg({
+      save: false,
+      full: true,
+      onLoad: (base64) => {
+        var pdf = new jspdf.jsPDF();
+        var img = new Image();
+        img.src = base64;
+        img.onload = function () {
+          pdf.addImage(
+            img,
+            'JPEG',
+            5,
+            5,
+            595 / 3,
+            ((img.height / img.width) * 595) / 3
+          );
+          pdf.save('chart.pdf');
+        };
+      },
+    });
+  }
+
+  // This is the data used - https://github.com/bumbeishvili/sample-data/blob/main/data-oracle.csv
+  d3.csv(
+    'https://bcitigab.github.io/graph_beaconsfield.csv'
+  ).then((data) => {
+    chart = new d3.OrgChart()
+      .nodeHeight((d) => 150 + 25)
+      .nodeWidth((d) => 220 + 2)
+      .childrenMargin((d) => 50)
+      .compactMarginBetween((d) => 35)
+      .compactMarginPair((d) => 30)
+      .neighbourMargin((a, b) => 20)
+      .nodeContent(function (d, i, arr, state) {
+        const color = '#FFFFFF';
+        const imageDiffVert = 25 + 2;
+        return `
+                <div style='width:${
+                  d.width
+                }px;height:${d.height}px;padding-top:${imageDiffVert - 2}px;padding-left:1px;padding-right:1px'>
+                        <div style="font-family: 'Inter', sans-serif;background-color:${color};  margin-left:-1px;width:${d.width - 2}px;height:${d.height - imageDiffVert}px;border-radius:10px;border: 1px solid #E4E2E9">
+                            <div style="display:flex;justify-content:flex-end;margin-top:5px;margin-right:8px">#${
+                              d.data.id
+                            }</div>
+                            <div style="background-color:${color};margin-top:${-imageDiffVert - 20}px;margin-left:${15}px;border-radius:100px;width:50px;height:50px;" ></div>
+                            <div style="margin-top:${
+                              -imageDiffVert - 20
+                            }px;">   <img src=" ${d.data.image}" style="margin-left:${20}px;border-radius:100px;width:40px;height:40px;" /></div>
+                            <div style="font-size:15px;color:#08011E;margin-left:20px;margin-top:10px">  ${
+                              d.data.name
+                            } </div>
+                            <div style="color:#716E7B;margin-left:20px;margin-top:3px;font-size:10px;"> ${
+                              d.data.position
+                            } </div>
+                            <div style="color:#716E7B;margin-left:20px;margin-top:3px;font-size:6px;"> ${
+                              d.data.data
+                            } </div>
+
+                        </div>
+                    </div>
+                            `;
+      })
+      .container('.chart-container')
+      .data(data)
+      .compact(false)  // Set horizontal view by default
+      .render();
+
+    // Define the buttons after chart initialization
+    //const multiNodeButton = document.createElement('button');
+    //multiNodeButton.innerHTML = 'Multi Node Connections';
+    //multiNodeButton.onclick = () => {
+    //  if (connectionsAdded) {
+    //    chart.connections([]).render();
+    //    connectionsAdded = false;
+   //   } else {
+    //    chart.connections([{from:"145",to:"201",label:"Conflicts of interest"}]).render();
+   //     connectionsAdded = true;
+   //   }
+   // };
+    //document.body.appendChild(multiNodeButton);
+
+    const horizontalButton = document.createElement('button');
+    horizontalButton.innerHTML = 'Horizontal';
+    horizontalButton.onclick = () => {
+      chart.compact(false).render().fit();
+    };
+    document.body.appendChild(horizontalButton);
+
+    const compactButton = document.createElement('button');
+    compactButton.innerHTML = 'Compact';
+    compactButton.onclick = () => {
+      chart.compact(true).render().fit();
+    };
+    document.body.appendChild(compactButton);
+
+    const exportCurrentButton = document.createElement('button');
+    exportCurrentButton.innerHTML = 'Export Current';
+    exportCurrentButton.onclick = () => {
+      chart.exportImg();
+    };
+    document.body.appendChild(exportCurrentButton);
+
+    const exportFullButton = document.createElement('button');
+    exportFullButton.innerHTML = 'Export Full';
+    exportFullButton.onclick = () => {
+      chart.exportImg({full: true});
+    };
+    document.body.appendChild(exportFullButton);
+
+    const exportSvgButton = document.createElement('button');
+    exportSvgButton.innerHTML = 'Export SVG';
+    exportSvgButton.onclick = () => {
+      chart.exportSvg();
+    };
+    document.body.appendChild(exportSvgButton);
+
+    const exportPdfButton = document.createElement('button');
+    exportPdfButton.innerHTML = 'Export PDF';
+    exportPdfButton.onclick = () => {
+      downloadPdf(chart);
+    };
+    document.body.appendChild(exportPdfButton);
+  });
+</script>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3-org-chart@3.1.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3-flextree@2.1.2/build/d3-flextree.js"></script>
+
+<div class="chart-container"></div>
+
+<script>
+  var chart = null;
+
+  // This is the data used - https://github.com/bumbeishvili/sample-data/blob/main/data-oracle.csv
+  d3.csv(
+    'https://raw.githubusercontent.com/bumbeishvili/sample-data/main/data-oracle.csv'
+  ).then((data) => {
+    chart = new d3.OrgChart()
+      .compact(false)
+      .pagingStep((d) => 5)
+      .minPagingVisibleNodes((d) => 3)
+      .pagingButton((d, i, arr, state) => {
+        const step = state.pagingStep(d.parent);
+        const currentIndex = d.parent.data._pagingStep;
+        const diff = d.parent.data._directSubordinatesPaging - currentIndex;
+        const min = Math.min(diff, step);
+        return `
+                   <div style="margin-top:50px;">
+                      <div style="display:flex;width:170px;border-radius:20px;padding:5px 15px; padding-bottom:4px;;background-color:#E5E9F2">
+                      <div><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5.59 7.41L10.18 12L5.59 16.59L7 18L13 12L7 6L5.59 7.41ZM16 6H18V18H16V6Z" fill="#716E7B" stroke="#716E7B"/>
+                      </svg>
+                      </div><div style="line-height:2"> Show next ${min}  nodes </div></div>
+                   </div>
+                `;
+      })
+
+      .nodeHeight((d) => 85 + 25)
+      .nodeWidth((d) => 220 + 2)
+      .childrenMargin((d) => 50)
+      .compactMarginBetween((d) => 35)
+      .compactMarginPair((d) => 30)
+      .neighbourMargin((a, b) => 20)
+      .nodeContent(function (d, i, arr, state) {
+        const color = '#FFFFFF';
+        const imageDiffVert = 25 + 2;
+        return `
+                <div style='width:${
+                  d.width
+                }px;height:${d.height}px;padding-top:${imageDiffVert - 2}px;padding-left:1px;padding-right:1px'>
+                        <div style="font-family: 'Inter', sans-serif;background-color:${color};  margin-left:-1px;width:${d.width - 2}px;height:${d.height - imageDiffVert}px;border-radius:10px;border: ${d.data._highlighted || d.data._upToTheRootHighlighted ? '5px solid #E27396"' : '1px solid #E4E2E9"'} >
+                            <div style="display:flex;justify-content:flex-end;margin-top:5px;margin-right:8px">#${
+                              d.data.id
+                            }</div>
+                            <div style="background-color:${color};margin-top:${-imageDiffVert - 20}px;margin-left:${15}px;border-radius:100px;width:50px;height:50px;" ></div>
+                            <div style="margin-top:${
+                              -imageDiffVert - 20
+                            }px;">   <img src=" ${d.data.image}" style="margin-left:${20}px;border-radius:100px;width:40px;height:40px;" /></div>
+                            <div style="font-size:15px;color:#08011E;margin-left:20px;margin-top:10px">  ${
+                              d.data.name
+                            } </div>
+                            <div style="color:#716E7B;margin-left:20px;margin-top:3px;font-size:10px;"> ${
+                              d.data.position
+                            } </div>
+
+                        </div>
+                    </div>
+                            `;
+      })
+      .container('.chart-container')
+      .data(data)
+      .render();
+  });
+</script>

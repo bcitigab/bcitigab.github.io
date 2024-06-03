@@ -32,12 +32,15 @@
 
     // Loop over data and check if input value matches any name
     data.forEach((d) => {
-      if (value != '' && d.name.toLowerCase().includes(value.toLowerCase())) {
-        // If matches, mark node as highlighted
-        d._highlighted = true;
-        d._expanded = true;
-      }
-    });
+    const nameMatches = d.name.toLowerCase().includes(value);
+    const positionMatches = d.position && d.position.toLowerCase().includes(value);
+    const dataMatches = d.data && Object.values(d.data).some(val => val.toLowerCase().includes(value));
+    if (value != '' && (nameMatches || positionMatches || dataMatches)) {
+      // If matches, mark node as highlighted
+      d._highlighted = true;
+      d._expanded = true;
+    }
+  });
 
     // Update data and rerender graph
     chart.data(data).render().fit();

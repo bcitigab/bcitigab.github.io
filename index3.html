@@ -110,6 +110,7 @@
       })
       .container('.chart-container')
       .data(data)
+      .compact(false)  // Set horizontal view by default
       .render();
 
     // Define the buttons after chart initialization
@@ -129,14 +130,14 @@
     const horizontalButton = document.createElement('button');
     horizontalButton.innerHTML = 'Horizontal';
     horizontalButton.onclick = () => {
-      chart.compact(true).render().fit();
+      chart.compact(false).render().fit();
     };
     document.body.appendChild(horizontalButton);
 
     const compactButton = document.createElement('button');
     compactButton.innerHTML = 'Compact';
     compactButton.onclick = () => {
-      chart.compact(false).render().fit();
+      chart.compact(true).render().fit();
     };
     document.body.appendChild(compactButton);
 

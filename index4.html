@@ -1,8 +1,113 @@
-<script src="https://d3js.org/d3.v7.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/d3-org-chart@3.0.1"></script>
-<script src="https://cdn.jsdelivr.net/npm/d3-flextree@2.1.2/build/d3-flextree.js"></script>
-<script src="https://unpkg.com/html2canvas@1.1.4/dist/html2canvas.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+<script src="https://d3js.org/d3.v7.min.js">
+chart = new d3.OrgChart()
+      .compact(false)
+      .pagingStep((d) => 5)
+      .minPagingVisibleNodes((d) => 3)
+      .pagingButton((d, i, arr, state) => {
+        const step = state.pagingStep(d.parent);
+        const currentIndex = d.parent.data._pagingStep;
+        const diff = d.parent.data._directSubordinatesPaging - currentIndex;
+        const min = Math.min(diff, step);
+        return `
+                   <div style="margin-top:50px;">
+                      <div style="display:flex;width:170px;border-radius:20px;padding:5px 15px; padding-bottom:4px;;background-color:#E5E9F2">
+                      <div><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5.59 7.41L10.18 12L5.59 16.59L7 18L13 12L7 6L5.59 7.41ZM16 6H18V18H16V6Z" fill="#716E7B" stroke="#716E7B"/>
+                      </svg>
+                      </div><div style="line-height:2"> Show next ${min}  nodes </div></div>
+                   </div>
+                `;
+      })
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/d3-org-chart@3.0.1">
+chart = new d3.OrgChart()
+      .compact(false)
+      .pagingStep((d) => 5)
+      .minPagingVisibleNodes((d) => 3)
+      .pagingButton((d, i, arr, state) => {
+        const step = state.pagingStep(d.parent);
+        const currentIndex = d.parent.data._pagingStep;
+        const diff = d.parent.data._directSubordinatesPaging - currentIndex;
+        const min = Math.min(diff, step);
+        return `
+                   <div style="margin-top:50px;">
+                      <div style="display:flex;width:170px;border-radius:20px;padding:5px 15px; padding-bottom:4px;;background-color:#E5E9F2">
+                      <div><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5.59 7.41L10.18 12L5.59 16.59L7 18L13 12L7 6L5.59 7.41ZM16 6H18V18H16V6Z" fill="#716E7B" stroke="#716E7B"/>
+                      </svg>
+                      </div><div style="line-height:2"> Show next ${min}  nodes </div></div>
+                   </div>
+                `;
+      })
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/d3-flextree@2.1.2/build/d3-flextree.js">
+chart = new d3.OrgChart()
+      .compact(false)
+      .pagingStep((d) => 5)
+      .minPagingVisibleNodes((d) => 3)
+      .pagingButton((d, i, arr, state) => {
+        const step = state.pagingStep(d.parent);
+        const currentIndex = d.parent.data._pagingStep;
+        const diff = d.parent.data._directSubordinatesPaging - currentIndex;
+        const min = Math.min(diff, step);
+        return `
+                   <div style="margin-top:50px;">
+                      <div style="display:flex;width:170px;border-radius:20px;padding:5px 15px; padding-bottom:4px;;background-color:#E5E9F2">
+                      <div><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5.59 7.41L10.18 12L5.59 16.59L7 18L13 12L7 6L5.59 7.41ZM16 6H18V18H16V6Z" fill="#716E7B" stroke="#716E7B"/>
+                      </svg>
+                      </div><div style="line-height:2"> Show next ${min}  nodes </div></div>
+                   </div>
+                `;
+      })
+
+</script>
+<script src="https://unpkg.com/html2canvas@1.1.4/dist/html2canvas.js">
+chart = new d3.OrgChart()
+      .compact(false)
+      .pagingStep((d) => 5)
+      .minPagingVisibleNodes((d) => 3)
+      .pagingButton((d, i, arr, state) => {
+        const step = state.pagingStep(d.parent);
+        const currentIndex = d.parent.data._pagingStep;
+        const diff = d.parent.data._directSubordinatesPaging - currentIndex;
+        const min = Math.min(diff, step);
+        return `
+                   <div style="margin-top:50px;">
+                      <div style="display:flex;width:170px;border-radius:20px;padding:5px 15px; padding-bottom:4px;;background-color:#E5E9F2">
+                      <div><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5.59 7.41L10.18 12L5.59 16.59L7 18L13 12L7 6L5.59 7.41ZM16 6H18V18H16V6Z" fill="#716E7B" stroke="#716E7B"/>
+                      </svg>
+                      </div><div style="line-height:2"> Show next ${min}  nodes </div></div>
+                   </div>
+                `;
+      })
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js">
+chart = new d3.OrgChart()
+      .compact(false)
+      .pagingStep((d) => 5)
+      .minPagingVisibleNodes((d) => 3)
+      .pagingButton((d, i, arr, state) => {
+        const step = state.pagingStep(d.parent);
+        const currentIndex = d.parent.data._pagingStep;
+        const diff = d.parent.data._directSubordinatesPaging - currentIndex;
+        const min = Math.min(diff, step);
+        return `
+                   <div style="margin-top:50px;">
+                      <div style="display:flex;width:170px;border-radius:20px;padding:5px 15px; padding-bottom:4px;;background-color:#E5E9F2">
+                      <div><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5.59 7.41L10.18 12L5.59 16.59L7 18L13 12L7 6L5.59 7.41ZM16 6H18V18H16V6Z" fill="#716E7B" stroke="#716E7B"/>
+                      </svg>
+                      </div><div style="line-height:2"> Show next ${min}  nodes </div></div>
+                   </div>
+                `;
+      })
+
+</script>
 
 <div class="Title"><h1>Cartographie de Beaconsfield</h1></div>
 <input
@@ -172,21 +277,8 @@
     };
     document.body.appendChild(exportPdfButton);
   });
-</script>
-<script src="https://d3js.org/d3.v7.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/d3-org-chart@3.1.0"></script>
-<script src="https://cdn.jsdelivr.net/npm/d3-flextree@2.1.2/build/d3-flextree.js"></script>
 
-<div class="chart-container"></div>
-
-<script>
-  var chart = null;
-
-  // This is the data used - https://github.com/bumbeishvili/sample-data/blob/main/data-oracle.csv
-  d3.csv(
-    'https://raw.githubusercontent.com/bumbeishvili/sample-data/main/data-oracle.csv'
-  ).then((data) => {
-    chart = new d3.OrgChart()
+chart = new d3.OrgChart()
       .compact(false)
       .pagingStep((d) => 5)
       .minPagingVisibleNodes((d) => 3)
@@ -206,40 +298,4 @@
                 `;
       })
 
-      .nodeHeight((d) => 85 + 25)
-      .nodeWidth((d) => 220 + 2)
-      .childrenMargin((d) => 50)
-      .compactMarginBetween((d) => 35)
-      .compactMarginPair((d) => 30)
-      .neighbourMargin((a, b) => 20)
-      .nodeContent(function (d, i, arr, state) {
-        const color = '#FFFFFF';
-        const imageDiffVert = 25 + 2;
-        return `
-                <div style='width:${
-                  d.width
-                }px;height:${d.height}px;padding-top:${imageDiffVert - 2}px;padding-left:1px;padding-right:1px'>
-                        <div style="font-family: 'Inter', sans-serif;background-color:${color};  margin-left:-1px;width:${d.width - 2}px;height:${d.height - imageDiffVert}px;border-radius:10px;border: ${d.data._highlighted || d.data._upToTheRootHighlighted ? '5px solid #E27396"' : '1px solid #E4E2E9"'} >
-                            <div style="display:flex;justify-content:flex-end;margin-top:5px;margin-right:8px">#${
-                              d.data.id
-                            }</div>
-                            <div style="background-color:${color};margin-top:${-imageDiffVert - 20}px;margin-left:${15}px;border-radius:100px;width:50px;height:50px;" ></div>
-                            <div style="margin-top:${
-                              -imageDiffVert - 20
-                            }px;">   <img src=" ${d.data.image}" style="margin-left:${20}px;border-radius:100px;width:40px;height:40px;" /></div>
-                            <div style="font-size:15px;color:#08011E;margin-left:20px;margin-top:10px">  ${
-                              d.data.name
-                            } </div>
-                            <div style="color:#716E7B;margin-left:20px;margin-top:3px;font-size:10px;"> ${
-                              d.data.position
-                            } </div>
-
-                        </div>
-                    </div>
-                            `;
-      })
-      .container('.chart-container')
-      .data(data)
-      .render();
-  });
 </script>

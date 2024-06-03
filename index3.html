@@ -33,8 +33,8 @@
   // Loop over data and check if input value matches any name, position, or data
   data.forEach((d) => {
     const nameMatches = d.name.toLowerCase().includes(value);
-    const positionMatches = d.position && d.position.toLowerCase().includes(value);
-    const dataMatches = d.data && Object.values(d.data).some(val => val.toLowerCase().includes(value));
+    const positionMatches = d.position.toLowerCase().includes(value);
+    const dataMatches = d.data.toLowerCase().includes(value);
     if (value != '' && (nameMatches || positionMatches || dataMatches)) {
       // If matches, mark node as highlighted
       d._highlighted = true;

@@ -18,20 +18,20 @@
   let connectionsAdded = false;
 
   function filterChart(e) {
-    // Get input value
-    const value = e.srcElement.value;
+  // Get input value
+  const value = e.srcElement.value.toLowerCase();
 
-    // Clear previous higlighting
-    chart.clearHighlighting();
+  // Clear previous highlighting
+  chart.clearHighlighting();
 
-    // Get chart nodes
-    const data = chart.data();
+  // Get chart nodes
+  const data = chart.data();
 
-    // Mark all previously expanded nodes for collapse
-    data.forEach((d) => (d._expanded = false));
+  // Mark all previously expanded nodes for collapse
+  data.forEach((d) => (d._expanded = false));
 
-    // Loop over data and check if input value matches any name
-    data.forEach((d) => {
+  // Loop over data and check if input value matches any name, position, or data
+  data.forEach((d) => {
     const nameMatches = d.name.toLowerCase().includes(value);
     const positionMatches = d.position && d.position.toLowerCase().includes(value);
     const dataMatches = d.data && Object.values(d.data).some(val => val.toLowerCase().includes(value));
@@ -42,11 +42,11 @@
     }
   });
 
-    // Update data and rerender graph
-    chart.data(data).render().fit();
+  // Update data and rerender graph
+  chart.data(data).render().fit();
 
-    console.log('filtering chart', e.srcElement.value);
-  }
+  console.log('filtering chart', e.srcElement.value);
+}
 
   function downloadPdf(chart) {
     chart.exportImg({

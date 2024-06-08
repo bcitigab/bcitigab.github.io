@@ -1,0 +1,169 @@
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3-org-chart@3.0.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3-flextree@2.1.2/build/d3-flextree.js"></script>
+<script src="https://unpkg.com/html2canvas@1.1.4/dist/html2canvas.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+
+<div class="Title"><h1>Cartographie de Beaconsfield</h1></div>
+<input type="search" placeholder="search by name" oninput="filterChart(event)" />
+<div class="chart-container"></div>
+
+<script>
+  let chart;
+  let connectionsAdded = false;
+
+  function filterChart(e) {
+    const value = e.srcElement.value.toLowerCase();
+    chart.clearHighlighting();
+    const data = chart.data();
+    data.forEach((d) => (d._expanded = false));
+    data.forEach((d) => {
+      const nameMatches = d.name.toLowerCase().includes(value);
+      const positionMatches = d.position.toLowerCase().includes(value);
+      const dataMatches = d.data.toLowerCase().includes(value);
+      if (value != '' && (nameMatches || positionMatches || dataMatches)) {
+        d._highlighted = true;
+        d._expanded = true;
+      }
+    });
+    chart.data(data).render().fit();
+    console.log('filtering chart', e.srcElement.value);
+  }
+
+  function downloadPdf(chart) {
+    chart.exportImg({
+      save: false,
+      full: true,
+      onLoad: (base64) => {
+        var pdf = new jspdf.jsPDF();
+        var img = new Image();
+        img.src = base64;
+        img.onload = function () {
+          pdf.addImage(
+            img,
+            'JPEG',
+            5,
+            5,
+            595 / 3,
+            ((img.height / img.width) * 595) / 3
+          );
+          pdf.save('chart.pdf');
+        };
+      },
+    });
+  }
+
+  function addNode(parentNodeId) {
+    const newNode = {
+      id: Date.now().toString(),
+      name: prompt("Enter node name:"),
+      position: prompt("Enter node position:"),
+      data: prompt("Enter node data:"),
+      image: "" // Provide a default image or prompt for an image URL
+    };
+    const data = chart.data();
+    const parentNode = data.find(d => d.id === parentNodeId);
+    if (!parentNode.children) parentNode.children = [];
+    parentNode.children.push(newNode);
+    chart.data(data).render();
+  }
+
+  function modifyNode(nodeId) {
+    const data = chart.data();
+    const node = data.find(d => d.id === nodeId);
+    node.name = prompt("Enter new name:", node.name);
+    node.position = prompt("Enter new position:", node.position);
+    node.data = prompt("Enter new data:", node.data);
+    chart.data(data).render();
+  }
+
+  function removeNode(nodeId) {
+    let data = chart.data();
+    const removeNodeRecursively = (nodes, id) => {
+      return nodes.filter(node => {
+        if (node.id === id) return false;
+        if (node.children) node.children = removeNodeRecursively(node.children, id);
+        return true;
+      });
+    };
+    data = removeNodeRecursively(data, nodeId);
+    chart.data(data).render();
+  }
+
+  d3.csv('/mnt/data/graph_beaconsfield.csv').then((data) => {
+    chart = new d3.OrgChart()
+      .nodeHeight((d) => 150 + 25)
+      .nodeWidth((d) => 220 + 2)
+      .childrenMargin((d) => 50)
+      .compactMarginBetween((d) => 35)
+      .compactMarginPair((d) => 30)
+      .neighbourMargin((a, b) => 20)
+      .nodeContent(function (d, I, arr, state) {
+        const color = '#FFFFFF';
+        const imageDiffVert = 25 + 2;
+        return `
+                <div style='width:${d.width}px;height:${d.height}px;padding-top:${imageDiffVert - 2}px;padding-left:1px;padding-right:1px'>
+                        <div style="font-family: 'Inter', sans-serif;background-color:${color};  margin-left:-1px;width:${d.width - 2}px;height:${d.height - imageDiffVert}px;border-radius:10px;border: 1px solid #E4E2E9">
+                            <div style="display:flex;justify-content:flex-end;margin-top:5px;margin-right:8px">#${d.data.id}</div>
+                            <div style="background-color:${color};margin-top:${-imageDiffVert - 20}px;margin-left:${15}px;border-radius:100px;width:50px;height:50px;" ></div>
+                            <div style="margin-top:${-imageDiffVert - 20}px;">   <img src=" ${d.data.image}" style="margin-left:${20}px;border-radius:100px;width:40px;height:40px;" /></div>
+                            <div style="font-size:15px;color:#08011E;margin-left:20px;margin-top:10px">  ${d.data.name} </div>
+                            <div style="color:#716E7B;margin-left:20px;margin-top:3px;font-size:10px;"> ${d.data.position} </div>
+                            <div style="color:#716E7B;margin-left:20px;margin-top:3px;font-size:6px;"> ${d.data.data} </div>
+                            <div style="margin-top: 10px; margin-left: 20px;">
+                                <button onclick="addNode('${d.data.id}')">Add</button>
+                                <button onclick="modifyNode('${d.data.id}')">Modify</button>
+                                <button onclick="removeNode('${d.data.id}')">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                            `;
+      })
+      .container('.chart-container')
+      .data(data)
+      .compact(false)
+      .render();
+
+    const horizontalButton = document.createElement('button');
+    horizontalButton.innerHTML = 'Horizontal';
+    horizontalButton.onclick = () => {
+      chart.compact(false).render().fit();
+    };
+    document.body.appendChild(horizontalButton);
+
+    const compactButton = document.createElement('button');
+    compactButton.innerHTML = 'Compact';
+    compactButton.onclick = () => {
+      chart.compact(true).render().fit();
+    };
+    document.body.appendChild(compactButton);
+
+    const exportCurrentButton = document.createElement('button');
+    exportCurrentButton.innerHTML = 'Export Current';
+    exportCurrentButton.onclick = () => {
+      chart.exportImg();
+    };
+    document.body.appendChild(exportCurrentButton);
+
+    const exportFullButton = document.createElement('button');
+    exportFullButton.innerHTML = 'Export Full';
+    exportFullButton.onclick = () => {
+      chart.exportImg({ full: true });
+    };
+    document.body.appendChild(exportFullButton);
+
+    const exportSvgButton = document.createElement('button');
+    exportSvgButton.innerHTML = 'Export SVG';
+    exportSvgButton.onclick = () => {
+      chart.exportSvg();
+    };
+    document.body.appendChild(exportSvgButton);
+
+    const exportPdfButton = document.createElement('button');
+    exportPdfButton.innerHTML = 'Export PDF';
+    exportPdfButton.onclick = () => {
+      downloadPdf(chart);
+    };
+    document.body.appendChild(exportPdfButton);
+  });
+</script>

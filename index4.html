@@ -88,7 +88,7 @@
   d3.csv('https://bcitigab.github.io/graph_beaconsfield.csv').then((csvData) => {
     data = csvData;
     chart = new d3.OrgChart()
-      .nodeHeight((d) => 150 + 25)
+      .nodeHeight((d) => 175 + 25)
       .nodeWidth((d) => 220 + 2)
       .childrenMargin((d) => 50)
       .compactMarginBetween((d) => 35)

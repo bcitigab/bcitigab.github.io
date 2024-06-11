@@ -13,8 +13,8 @@ h1 {
   font-family: 'Montserrat', sans-serif;
   font-size: 2em;
   color: #333;
-  margin-left: 70px; /* Add margin to prevent overlap with the logo */
-  padding-top: 10px; /* Add padding to align with the logo */
+  margin-left: 10px; /* Add margin to prevent overlap with the logo */
+  padding-top: 30px; /* Add padding to align with the logo */
 }
 
 /* Style for the logo */

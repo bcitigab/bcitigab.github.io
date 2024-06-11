@@ -25,3 +25,7 @@ h1 {
   height: 50px;
   z-index: 10; /* Ensure the logo is on top */
 }
+
+.chart-container {
+  margin-left: 25px; 
+}

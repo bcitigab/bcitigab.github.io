@@ -29,3 +29,10 @@ h1 {
 .chart-container {
   margin-left: 25px; 
 }
+
+/* Style for the search input */
+input[type="search"] {
+  position: relative;
+  left: 25px;
+  margin-top: 20px; /* Optional: Add margin-top for spacing */
+}

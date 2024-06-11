@@ -24,4 +24,5 @@ h1 {
   left: 10px;
   height: 50px;
   z-index: 10; /* Ensure the logo is on top */
+  margin-left: 10px;
 }

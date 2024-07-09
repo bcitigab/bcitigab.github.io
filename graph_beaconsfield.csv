@@ -119,34 +119,34 @@ id,parentId,name,city,position,image,data
 218,214,Directeur de l'aménagement public/patrouille municipale,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
 219,214,Chef de division biblio,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
 220,214,Chef de section services au public,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
-221,100,Beneva,Beaconsfield,Source de données,https://bcitigab.github.io/icons/upload.png,"Adhésion assurances collectives: Nom , Date de naissance, adresse, nom des enfants, date de naissance des enfants, nom du conjoint, date de naissance du conjoint, niveau de protection, bénéficiaires, confirmation fréquentation scolaire pour enfants de 21 à 25 ans. Invalidité: Nom, DDN, numéro de certificat, informations médicales incluant diagnostic, traitement et limitations, dates absences, date suivi médicaux, nom du médecin"
+221,110,Beneva,Beaconsfield,Source de données,https://bcitigab.github.io/icons/upload.png,"Adhésion assurances collectives: Nom , Date de naissance, adresse, nom des enfants, date de naissance des enfants, nom du conjoint, date de naissance du conjoint, niveau de protection, bénéficiaires, confirmation fréquentation scolaire pour enfants de 21 à 25 ans. Invalidité: Nom, DDN, numéro de certificat, informations médicales incluant diagnostic, traitement et limitations, dates absences, date suivi médicaux, nom du médecin"
 222,221,Système de la paie,Beaconsfield,Hébergement / Stockage,https://bcitigab.github.io/icons/folder.png,
 223,222,Employés des ressources humaines,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
 224,222,Directeur des ressources humaines,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
-225,100,Dialogue,Beaconsfield,Source de données,https://bcitigab.github.io/icons/upload.png,Nom et adresse courriel de la Ville
+225,110,Dialogue,Beaconsfield,Source de données,https://bcitigab.github.io/icons/upload.png,Nom et adresse courriel de la Ville
 226,225,Serveur de Dialogue,Beaconsfield,Hébergement / Stockage,https://bcitigab.github.io/icons/folder.png,
 227,226,Employés des ressources humaines,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
 228,226,Directeur des ressources humaines,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
 229,226,Employés de Dialogue,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
-230,100,Workleap (Officevibe ),Beaconsfield,Source de données,https://bcitigab.github.io/icons/upload.png,"Nom, adresse courriel de la Ville, titre de poste, date d'embauche, service, sous-équipes, genre, DDN"
+230,110,Workleap (Officevibe ),Beaconsfield,Source de données,https://bcitigab.github.io/icons/upload.png,"Nom, adresse courriel de la Ville, titre de poste, date d'embauche, service, sous-équipes, genre, DDN"
 231,230,Serveur de Workleap,Beaconsfield,Hébergement / Stockage,https://bcitigab.github.io/icons/folder.png,
 232,231,Employés des ressources humaines,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
 233,231,Directeur des ressources humaines,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
 234,231,Directeur général,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
 235,231,Gestionnnaire d'équipe,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
 236,231,Employés de Workleap,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
-237,100,Workleap (Onboarding ),Beaconsfield,Source de données,https://bcitigab.github.io/icons/upload.png,"Nom, adresse courriel de la Ville, titre de poste, date d'embauche, service, sous-équipes, informations liées aux tâches"
+237,110,Workleap (Onboarding ),Beaconsfield,Source de données,https://bcitigab.github.io/icons/upload.png,"Nom, adresse courriel de la Ville, titre de poste, date d'embauche, service, sous-équipes, informations liées aux tâches"
 238,237,Serveur de Workleap,Beaconsfield,Hébergement / Stockage,https://bcitigab.github.io/icons/folder.png,
 239,238,Employés des ressources humaines,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
 240,238,Directeur des ressources humaines,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
 241,238,Employés de la ville,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
 242,238,Employés de Workleap,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
-243,100,NovoSST,Beaconsfield,Source de données,https://bcitigab.github.io/icons/upload.png,"Volet réclamation: Nom, DDN, titre de poste, salaire, dates d'embauche, information médicale requise des employés visés par une réclamation CNESST Plateforme de formation: nom et adresse courriel, adresse IP Application BE HEalthy: nom, adresse courriel, données sur l'Exercie"
+243,110,NovoSST,Beaconsfield,Source de données,https://bcitigab.github.io/icons/upload.png,"Volet réclamation: Nom, DDN, titre de poste, salaire, dates d'embauche, information médicale requise des employés visés par une réclamation CNESST Plateforme de formation: nom et adresse courriel, adresse IP Application BE HEalthy: nom, adresse courriel, données sur l'Exercie"
 244,243,Serveur de NovoSST,Beaconsfield,Hébergement / Stockage,https://bcitigab.github.io/icons/folder.png,
 245,244,Employés des ressources humaines,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
 246,244,Directeur des ressources humaines,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
 247,244,Employés de NOVO,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
-248,100,Ariel - plateforme régime de retraite,Beaconsfield,Source de données,https://bcitigab.github.io/icons/upload.png,"Nom, DDN, salaire, coordonnées- adresse, numéro de téléphone, titre d'emploi, date d'embauche, nombres d'années de service, salaire, nom du conjoint, DDN conjoint, état civil, bénéficiaires"
+248,110,Ariel - plateforme régime de retraite,Beaconsfield,Source de données,https://bcitigab.github.io/icons/upload.png,"Nom, DDN, salaire, coordonnées- adresse, numéro de téléphone, titre d'emploi, date d'embauche, nombres d'années de service, salaire, nom du conjoint, DDN conjoint, état civil, bénéficiaires"
 249,248,Serveur de Lifeworks,Beaconsfield,Hébergement / Stockage,https://bcitigab.github.io/icons/folder.png,
 250,249,Employés des ressources humaines,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
 251,249,Directeur des ressources humaines,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
@@ -156,7 +156,7 @@ id,parentId,name,city,position,image,data
 255,249,Comptabilité et paie,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
 256,249,ACAPAS,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
 257,249,Personnel de Lifeworks,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
-258,100,Unicité Employés,Beaconsfield,Source de données,https://bcitigab.github.io/icons/upload.png,"Nom, DDN, NAS, genre, numéro d'employé. RAMQ (avons arrêté de le recueuillir) salaire, coordonnées- adresse, numéro de téléphone, titre d'emploi, date d'embauche, nombres d'années de service, salaire, nom du conjoint, DDN conjoint, état civil,information compte bancaire, banques de congés, dates d'absences et causes d'absence"
+258,110,Unicité Employés,Beaconsfield,Source de données,https://bcitigab.github.io/icons/upload.png,"Nom, DDN, NAS, genre, numéro d'employé. RAMQ (avons arrêté de le recueuillir) salaire, coordonnées- adresse, numéro de téléphone, titre d'emploi, date d'embauche, nombres d'années de service, salaire, nom du conjoint, DDN conjoint, état civil,information compte bancaire, banques de congés, dates d'absences et causes d'absence"
 259,258,Serveur de Unicité,Beaconsfield,Hébergement / Stockage,https://bcitigab.github.io/icons/folder.png,
 260,259,ACAPAS,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
 261,260,Chef de section,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
@@ -167,12 +167,12 @@ id,parentId,name,city,position,image,data
 266,260,Conseiller RH,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
 267,260,Stagiaire RH,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
 268,260,DRH,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
-269,100,MaPaie (PG),Beaconsfield,Source de données,https://bcitigab.github.io/icons/upload.png,"Nom, DDN, NAS, genre, numéro d'employé. salaire, coordonnées- adresse, numéro de téléphone, titre d'emploi, date d'embauche, nombres d'années de service, salaire et autres détails de paie, nombre d'heures de travail, usage des banques de congés, état civil,information compte bancaire, banques de congés, dates d'absences et causes d'absence"
+269,110,MaPaie (PG),Beaconsfield,Source de données,https://bcitigab.github.io/icons/upload.png,"Nom, DDN, NAS, genre, numéro d'employé. salaire, coordonnées- adresse, numéro de téléphone, titre d'emploi, date d'embauche, nombres d'années de service, salaire et autres détails de paie, nombre d'heures de travail, usage des banques de congés, état civil,information compte bancaire, banques de congés, dates d'absences et causes d'absence"
 270,269,Serveur de PG,Beaconsfield,Hébergement / Stockage,https://bcitigab.github.io/icons/folder.png,
 271,270,Employés des ressources humaines,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
 272,270,Directeur des ressources humaines,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
 273,270,Employés de la ville,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
-274,100,Dossiers RH,Beaconsfield,Source de données,https://bcitigab.github.io/icons/upload.png,"Nom et prénom,Genre,NAS,DDN,Coordonnées (tel, courriel, adresse, contact en cas d'urgence),Diplômes (lorsque requis),Permis de conduire (lorsque requis),État civil,Résultats tests de langue,CV,Tests psychométrique lorsque application,Évaluations de performance,Mesures disciplinaires,Informaitons liées aux absences pour maladie et accidents de travail incluant information médicale (diagnostic, limitations, traitement),Inscriptions à des formations,Lettres d'embauches, nominations, mutations, de confirmaiton d'Emploi,Salaire,Formulaires d'adhésion (retraite, assurance collective),Plainte, griefs,Toute autre informaiton personnelle pertinente selon le dossier de l'employé"
+274,110,Dossiers RH,Beaconsfield,Source de données,https://bcitigab.github.io/icons/upload.png,"Nom et prénom,Genre,NAS,DDN,Coordonnées (tel, courriel, adresse, contact en cas d'urgence),Diplômes (lorsque requis),Permis de conduire (lorsque requis),État civil,Résultats tests de langue,CV,Tests psychométrique lorsque application,Évaluations de performance,Mesures disciplinaires,Informaitons liées aux absences pour maladie et accidents de travail incluant information médicale (diagnostic, limitations, traitement),Inscriptions à des formations,Lettres d'embauches, nominations, mutations, de confirmaiton d'Emploi,Salaire,Formulaires d'adhésion (retraite, assurance collective),Plainte, griefs,Toute autre informaiton personnelle pertinente selon le dossier de l'employé"
 275,274,Docusign,Beaconsfield,Hébergement / Stockage,https://bcitigab.github.io/icons/folder.png,
 276,275,Directrice RH,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,
 277,275,Conseiller RH,Beaconsfield,Accès,https://bcitigab.github.io/icons/key.png,

@@ -13,8 +13,8 @@ id,parentId,name,city,position,image,data
 112,100,Travaux public,Baie-Trinité,Service municipale,https://bcitigab.github.io/icons/toolbox.png,
 113,100,Urbanisme,Baie-Trinité,Service municipale,https://bcitigab.github.io/icons/toolbox.png,
 114,113,Demande de permis,Baie-Trinité,Source de données,https://bcitigab.github.io/icons/upload.png,
-115,113,Serveur Accès Cité-territoire,Baie-Trinité,Hébergement / Stockage,https://bcitigab.github.io/icons/folder.png,
-116,114,Serveur local,Baie-Trinité,Hébergement / Stockage,https://bcitigab.github.io/icons/folder.png,
+115,114,Serveur Accès Cité-territoire,Baie-Trinité,Hébergement / Stockage,https://bcitigab.github.io/icons/folder.png,
+116,115,Serveur local,Baie-Trinité,Hébergement / Stockage,https://bcitigab.github.io/icons/folder.png,
 117,116,Employés d'Accès Cité-Territoire,Baie-Trinité,Accès,https://bcitigab.github.io/icons/key.png,
 118,116,Tous les employés municipaux,Baie-Trinité,Accès,https://bcitigab.github.io/icons/key.png,
 119,101,Formulaire de plaintes/requêtes,Baie-Trinité,Source de données,https://bcitigab.github.io/icons/upload.png,"nom, prénom du plaintif, adresse du plaintif, adresse électronique, téléphones du plaintif, Nom et prénom du fautif, Adresse du fautif"
@@ -25,7 +25,7 @@ id,parentId,name,city,position,image,data
 124,101,Formulaire de dérogation mineur,Baie-Trinité,Source de données,https://bcitigab.github.io/icons/upload.png,
 125,124,Serveur Accès Cité-territoire,Baie-Trinité,Hébergement / Stockage,https://bcitigab.github.io/icons/folder.png,
 126,125,Serveur local,Baie-Trinité,Hébergement / Stockage,https://bcitigab.github.io/icons/folder.png,
-127,125,Employés d'Accès Cité-Territoire,Baie-Trinité,Accès,https://bcitigab.github.io/icons/key.png,
+127,126,Employés d'Accès Cité-Territoire,Baie-Trinité,Accès,https://bcitigab.github.io/icons/key.png,
 128,126,Tous les employés municipaux,Baie-Trinité,Accès,https://bcitigab.github.io/icons/key.png,
 129,103,Système de bibliothèque informatisé centralisé,Baie-Trinité,Source de données,https://bcitigab.github.io/icons/upload.png,"nom, prénom, numéro de téléphone, noms et prénoms de spécialistes, achats"
 130,129,Réseau Symphonie,Baie-Trinité,Hébergement / Stockage,https://bcitigab.github.io/icons/folder.png,

@@ -90,7 +90,7 @@
       chart.data(data).render().fit();
     }
 
-    d3.csv('https://bcitigab.github.io/graph/windsor.csv').then((csvData) => {
+    d3.csv('https://bcitigab.github.io/graph/beaconsfield.csv').then((csvData) => {
       data = csvData;
       chart = new d3.OrgChart()
         .nodeHeight((d) => 175 + 25)

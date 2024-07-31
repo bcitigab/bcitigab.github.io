@@ -1,0 +1,81 @@
+id,parentId,name,city,position,image,data
+100,,Citoyens,Richelieu,Utilisateur,https://bumbeishvili.github.io/avatars/avatars/portrait12.png,
+101,100,Administration,Richelieu,Service municipale,https://bcitigab.github.io/icons/toolbox.png,
+102,100,Service de l'approvisionnement,Richelieu,Service municipale,https://bcitigab.github.io/icons/toolbox.png,
+103,100,Bibliothèque,Richelieu,Service municipale,https://bcitigab.github.io/icons/toolbox.png,
+104,100,Communications,Richelieu,Service municipale,https://bcitigab.github.io/icons/toolbox.png,
+105,100,Direction générale,Richelieu,Service municipale,https://bcitigab.github.io/icons/toolbox.png,
+107,100,Loisir,Richelieu,Service municipale,https://bcitigab.github.io/icons/toolbox.png,
+108,100,Animaux domestiques,Richelieu,Service municipale,https://bcitigab.github.io/icons/toolbox.png,
+109,100,Sécurité,Richelieu,Service municipale,https://bcitigab.github.io/icons/toolbox.png,
+110,100,Ressources humaines,Richelieu,Service municipale,https://bcitigab.github.io/icons/toolbox.png,
+111,100,Service de taxation,Richelieu,Service municipale,https://bcitigab.github.io/icons/toolbox.png,
+112,100,Travaux public,Richelieu,Service municipale,https://bcitigab.github.io/icons/toolbox.png,
+113,100,Urbanisme,Richelieu,Service municipale,https://bcitigab.github.io/icons/toolbox.png,
+114,105,Formulaire plaintes et requêtes,Richelieu,Source de données,https://bcitigab.github.io/icons/upload.png,"Nom, prénom, Adresse, Adresse courriel, Numéro de téléphone, Numéro d'identification"
+115,114,Serveurs de Monday,Richelieu,Hébergement / Stockage,https://bcitigab.github.io/icons/folder.png,
+116,114,Employés administratif avec niveau d'accès cloisonné*,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+117,114,*Employés aux communications,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+118,114,*Employés aux communications,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+119,114,*Employés aux loisirs,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+120,114,*Employés aux greffe,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+121,114,*Employés aux finance,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+122,114,*Employés aux travaux publiques,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+123,114,*Pompiers,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+124,114,*Employés à l'urbanisme,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+125,114,Directeur général,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+126,114,Directeur des communications,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+127,114,Employés de Monday,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+128,104,Formulaire général de contact,Richelieu,Source de données,https://bcitigab.github.io/icons/upload.png,"Nom, prénom, Adresse, Adresse courriel, Numéro de téléphone"
+129,128,Serveur de FUNIO,Richelieu,Hébergement / Stockage,https://bcitigab.github.io/icons/folder.png,
+130,129,Directeur des communications,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+131,129,Agente aux communications,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+132,129,Technicien informatique (Cedlinfo),Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+133,129,Employés de FUNIO,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+134,100,Transactions financières via PG Finance,Richelieu,Source de données,https://bcitigab.github.io/icons/upload.png,"Nom, prénom, Adresse, Adresse courriel, Numéro de téléphone, Renseignements bancaires, Mots de passe, Achats / transactions, Données de carte de crédit, Numéro d'identification"
+135,134,Serveurs de PG,Richelieu,Hébergement / Stockage,https://bcitigab.github.io/icons/folder.png,
+136,135,Employés des finances,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+137,135,Employés à la réception,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+138,135,Employés de PG,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+139,113,Demandes de permis via PG,Richelieu,Source de données,https://bcitigab.github.io/icons/upload.png,"Nom, prénom, Adresse, Adresse courriel, Numéro de téléphone, Renseignements bancaires, Mots de passe, Achats / transactions, Données de carte de crédit, Données de carte de débit, Numéro d'identification"
+140,139,Serveurs de PG,Richelieu,Hébergement / Stockage,https://bcitigab.github.io/icons/folder.png,
+141,140,Employés des finances,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+142,140,Employés à l'urbanisme,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+143,140,Employés de PG,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+144,107,Inscriptions aux activités et à la piscine,Richelieu,Source de données,https://bcitigab.github.io/icons/upload.png,"Nom, prénom, Date de naissance, Adresse, Adresse courriel, Numéro de téléphone, Renseignements bancaires, Mots de passe, Achats / transactions, Données de carte de crédit, Données de carte de débit, Numéro d'identification, Membres de la famille"
+145,144,Serveurs de Qidigo,Richelieu,Hébergement / Stockage,https://bcitigab.github.io/icons/folder.png,
+146,145,Directrice des loisirs,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+147,145,Techniciens aux loisirs,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+148,145,Employés de Qidigo,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+149,103,Réseau Biblio,Richelieu,Source de données,https://bcitigab.github.io/icons/upload.png,"Nom, prénom, Adresse, Adresse courriel, Numéro de téléphone, Renseignements bancaires, Mots de passe, Achats / transactions, Données de carte de crédit, Données de carte de débit, Numéro d'identification, Membres de la famille"
+150,149,Serveurs du Réso Biblio (Simba),Richelieu,Hébergement / Stockage,https://bcitigab.github.io/icons/folder.png,
+151,150,Bibliothécaires,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+152,150,Employés du Réso Biblio,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+153,104,Infolettre et groupe de contact (envois de sondages),Richelieu,Source de données,https://bcitigab.github.io/icons/upload.png,"Nom, prénom, Adresse, Adresse courriel"
+154,153,Serveurs de Mailchimp aux US,Richelieu,Hébergement / Stockage,https://bcitigab.github.io/icons/folder.png,
+155,154,Directeur des communications,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+156,154,Agente aux communications,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+157,154,Employés de Mailchimp,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+158,104,Sondages,Richelieu,Source de données,https://bcitigab.github.io/icons/upload.png,"Adresse courriel, Âge, Sexe, Genre, Habitudes de consommation"
+159,158,Serveurs de Microsoft,Richelieu,Hébergement / Stockage,https://bcitigab.github.io/icons/folder.png,
+160,159,Tout le monde dans l'administration,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+161,104,Requêtes 311/911,Richelieu,Source de données,https://bcitigab.github.io/icons/upload.png,"Nom, prénom, Adresse, Numéro de téléphone"
+162,110,Système de paye,Richelieu,Source de données,https://bcitigab.github.io/icons/upload.png,"Nom, prénom, Adresse, Adresse courriel, Numéro de téléphone, NAS, Revenus, Situation familiale, Date de naissance"
+163,162,Serveurs de PG,Richelieu,Hébergement / Stockage,https://bcitigab.github.io/icons/folder.png,
+164,163,Employés de PG,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+165,163,Employés aux finance,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+166,113,Évaluation foncière,Richelieu,Source de données,https://bcitigab.github.io/icons/upload.png,
+167,101,Répertoires de fournisseurs,Richelieu,Source de données,https://bcitigab.github.io/icons/upload.png,"Nom, prénom de la personne ressource, Téléphone"
+168,167,Formulaire d'abonnement PG,Richelieu,Hébergement / Stockage,https://bcitigab.github.io/icons/folder.png,
+169,168,Employés aux finance,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+170,168,Employés de PG,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+171,105,Caméra de seurveillance,Richelieu,Source de données,https://bcitigab.github.io/icons/upload.png,"Images des citoyens, Allés et venus (parcs, abords des bâtiments, dans la rue)"
+172,171,Capture et enregistrement vidéo en temps réel,Richelieu,Hébergement / Stockage,https://bcitigab.github.io/icons/folder.png,
+173,172,Directeur général,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+174,172,Directeur de greffe,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+175,105,Liste électorale,Richelieu,Source de données,https://bcitigab.github.io/icons/upload.png,"Nom, prénom, Adresse"
+176,175,DGEQ,Richelieu,Hébergement / Stockage,https://bcitigab.github.io/icons/folder.png,
+177,175,Serveurs de Microsoft (SharePoint),Richelieu,Hébergement / Stockage,https://bcitigab.github.io/icons/folder.png,
+178,177,Employés de Microsoft,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+179,176,DGE,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,
+180,178,Employés aux greffes,Richelieu,Accès,https://bcitigab.github.io/icons/key.png,

@@ -1,0 +1,38 @@
+/* styles.css */
+
+/* Import Montserrat font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* Apply Montserrat to all text */
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Style for h1 title */
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2em;
+  color: #213781;
+  margin-left: 25px; /* Add margin to prevent overlap with the logo */
+  padding-top: 100px; /* Add padding to align with the logo */
+}
+
+/* Style for the logo */
+.logo {
+  position: absolute;
+  top: 50px;
+  left: 35px;
+  height: 50px;
+  z-index: 10; /* Ensure the logo is on top */
+}
+
+.chart-container {
+  margin-left: 25px; 
+}
+
+/* Style for the search input */
+input[type="search"] {
+  position: relative;
+  left: 25px;
+  margin-top: 20px; /* Optional: Add margin-top for spacing */
+}

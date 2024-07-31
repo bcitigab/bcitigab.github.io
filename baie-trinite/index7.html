@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prévost - Cartographie des sources de données</title>
+  <title>Baie-Trinité - Cartographie des sources de données</title>
   <style>
     body {
       font-family: 'Inter', sans-serif;
@@ -36,7 +36,7 @@
 </head>
 <body>
   <img src="logo-bciti.png" alt="bciti logo" class="logo">
-  <div class="Title"><h1>Cartographie de Prévost</h1></div>
+  <div class="Title"><h1>Cartographie de Baie-Trinité</h1></div>
   <div class="controls">
     <input type="search" placeholder="search by name" oninput="filterChart(event)">
     <button onclick="chart.compact(false).render().fit()">Horizontal</button>
@@ -124,7 +124,7 @@
       chart.data(data).render().fit();
     }
 
-    d3.csv('https://bcitigab.github.io/graph/prevost.csv').then((csvData) => {
+    d3.csv('https://bcitigab.github.io/graph/baie-trinite.csv').then((csvData) => {
       data = csvData;
       chart = new d3.OrgChart()
         .nodeHeight((d) => 175 + 25)

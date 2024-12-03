@@ -1,24 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<style>
-    .videoWrapper {
-        position: relative;
-        padding-bottom: 56.25%; /* 16:9 */
-        padding-top: 25px;
-        height: 0;
-    }
-    .videoWrapper iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    } 
-</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .responsiveIframe {
+            position: relative;
+            width: 100%; /* Ensure iframe is responsive */
+            height: 100vh; /* Adjust height as needed (e.g., full viewport height) */
+            max-height: 100%; /* Prevent overflow */
+            border: none; /* No border for cleaner appearance */
+            display: block; /* Prevent inline-block gaps */
+        }
+    </style>
 </head>
-<div class="videoWrapper">
-    <iframe src="https://uat-lite.bciti.info/" allowfullscreen frameBorder="0"></iframe>
-</div>
-<script id="chatbotkit-widget" src="https://static.chatbotkit.com/integrations/widget/v2.js" data-widget="cm48kmt8207uodmjhprex94w3"></script>
-</html >
+<body>
+    <iframe 
+        class="responsiveIframe"
+        src="https://uat-lite.bciti.info/" 
+        allowfullscreen 
+        frameborder="0">
+    </iframe>
+    <script id="chatbotkit-widget" src="https://static.chatbotkit.com/integrations/widget/v2.js" data-widget="cm48kmt8207uodmjhprex94w3"></script>
+</body>
+</html>

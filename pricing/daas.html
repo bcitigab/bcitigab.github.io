@@ -6,60 +6,60 @@
     <title>Tarification DaaS - bciti+</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-gray-900 text-white p-8 font-sans">
+  <body class="bg-gray-100 text-gray-900 p-8 font-sans">
     <h1 class="text-3xl font-bold text-center mb-10">Tarification Data-as-a-Service (DaaS) – bciti+</h1>
 
-    <div class="overflow-x-auto">
-      <table class="table-auto w-full text-left border-collapse rounded-xl overflow-hidden">
-        <thead>
-          <tr class="bg-gradient-to-r from-gray-800 to-gray-900">
-            <th class="p-4 w-1/3 font-bold text-lg">Freemium</th>
-            <th class="p-4 w-1/3 font-bold text-lg">Premium Standard <span class="text-sm text-blue-400">(Most Popular)</span></th>
-            <th class="p-4 w-1/3 font-bold text-lg">Premium Enrichi</th>
-          </tr>
-        </thead>
-        <tbody class="bg-gray-800 divide-y divide-gray-700">
-          <tr>
-            <td class="p-4 font-semibold">Pour démarrer gratuitement et collecter les premiers signalements citoyens.</td>
-            <td class="p-4 font-semibold">Pour analyser les données agrégées et piloter les services intelligemment.</td>
-            <td class="p-4 font-semibold">Pour exploiter toute la puissance de la donnée prédictive enrichie par l’IA.</td>
-          </tr>
-          <tr>
-            <td class="p-4">✅ Signalements illimités</td>
-            <td class="p-4">✅ Tableau de bord simplifié</td>
-            <td class="p-4">✅ Tendances & détection IA</td>
-          </tr>
-          <tr>
-            <td class="p-4">✅ Notifications de base</td>
-            <td class="p-4">✅ Statistiques agrégées</td>
-            <td class="p-4">✅ API + exports CSV</td>
-          </tr>
-          <tr>
-            <td class="p-4">❌ Tableaux de bord</td>
-            <td class="p-4">✅ Rapport PDF mensuel</td>
-            <td class="p-4">✅ Recommandations IA</td>
-          </tr>
-          <tr>
-            <td class="p-4">❌ Statistiques consolidées</td>
-            <td class="p-4">✅ Support initial</td>
-            <td class="p-4">✅ Rapports personnalisés</td>
-          </tr>
-          <tr>
-            <td class="p-4">❌ API ou export</td>
-            <td class="p-4">❌ IA avancée ou API</td>
-            <td class="p-4">✅ Support stratégique</td>
-          </tr>
-          <tr class="bg-gray-900 text-blue-300">
-            <td class="p-4 font-bold">0 $ / mois</td>
-            <td class="p-4 font-bold">
-              <div>&lt; 20k : 300 $ / mois</div>
-              <div>20k–100k : 750 $ / mois</div>
-              <div>&gt; 100k : 1 500 $ / mois</div>
-            </td>
-            <td class="p-4 font-bold">À partir de 5 000 $ / an<br>(0,25 $ à 0,75 $ / requête)</td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="flex flex-col md:flex-row justify-center gap-8">
+      <!-- Freemium -->
+      <div class="bg-white rounded-xl shadow-md p-6 w-full max-w-sm">
+        <h2 class="text-xl font-semibold mb-2">Freemium</h2>
+        <p class="text-sm text-gray-500 mb-2">Pour démarrer gratuitement et collecter les premiers signalements citoyens.</p>
+        <p class="text-2xl font-bold text-blue-600 mb-4">0 $ / mois</p>
+        <a href="#" class="inline-block bg-blue-500 text-white py-2 px-4 rounded-lg mb-4 text-center">Commencer</a>
+        <ul class="space-y-2 text-sm">
+          <li>✅ Signalements illimités</li>
+          <li>✅ Notifications de base</li>
+          <li>❌ Tableaux de bord</li>
+          <li>❌ Statistiques consolidées</li>
+          <li>❌ API ou export</li>
+        </ul>
+      </div>
+
+      <!-- Premium Standard -->
+      <div class="bg-white border-2 border-blue-500 rounded-xl shadow-lg p-6 w-full max-w-sm relative">
+        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white text-xs px-3 py-1 rounded-full font-medium">Populaire</div>
+        <h2 class="text-xl font-semibold mb-2">Premium Standard</h2>
+        <p class="text-sm text-gray-500 mb-2">Pour analyser les données agrégées et piloter les services intelligemment.</p>
+        <p class="text-2xl font-bold text-blue-600 mb-4">Dès 300 $ / mois</p>
+        <a href="#" class="inline-block bg-blue-600 text-white py-2 px-4 rounded-lg mb-4 text-center">Parler à un expert</a>
+        <ul class="space-y-2 text-sm">
+          <li>✅ Tableau de bord simplifié</li>
+          <li>✅ Statistiques agrégées</li>
+          <li>✅ Rapport PDF mensuel</li>
+          <li>✅ Support initial</li>
+          <li>❌ IA avancée ou API</li>
+          <li class="font-semibold mt-2">Tarifs :</li>
+          <li>• &lt; 20k : 300 $ / mois</li>
+          <li>• 20k–100k : 750 $ / mois</li>
+          <li>• &gt; 100k : 1 500 $ / mois</li>
+        </ul>
+      </div>
+
+      <!-- Premium Enrichi -->
+      <div class="bg-white rounded-xl shadow-md p-6 w-full max-w-sm">
+        <h2 class="text-xl font-semibold mb-2">Premium Enrichi</h2>
+        <p class="text-sm text-gray-500 mb-2">Pour exploiter toute la puissance de la donnée prédictive enrichie par l’IA.</p>
+        <p class="text-2xl font-bold text-blue-600 mb-4">À partir de 5 000 $ / an</p>
+        <a href="#" class="inline-block bg-blue-500 text-white py-2 px-4 rounded-lg mb-4 text-center">Demander une démo</a>
+        <ul class="space-y-2 text-sm">
+          <li>✅ Tendances & détection IA</li>
+          <li>✅ Priorisation automatique</li>
+          <li>✅ API + exports CSV</li>
+          <li>✅ Rapports personnalisés</li>
+          <li>✅ Support stratégique</li>
+          <li class="mt-2 font-semibold">Ex. : 10 000 requêtes = 5 000 $ (0,50 $ / requête)</li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>a
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tarification DaaS - bciti+</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9fafb;
+      padding: 2rem;
+      color: #111;
+    }
+    .pricing-table {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .plan {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      width: 300px;
+      padding: 2rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      position: relative;
+    }
+    .plan.most-popular::before {
+      content: "Populaire";
+      background-color: #3b82f6;
+      color: #fff;
+      padding: 4px 12px;
+      font-size: 0.8rem;
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 12px;
+    }
+    .plan h2 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+    .price {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #3b82f6;
+      margin-bottom: 1rem;
+    }
+    .btn {
+      display: inline-block;
+      background: #3b82f6;
+      color: white;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .features {
+      list-style: none;
+      padding: 0;
+    }
+    .features li {
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tarification Data-as-a-Service (DaaS) – bciti+</h1>
+  <div class="pricing-table">
+    <div class="plan">
+      <h2>Freemium</h2>
+      <p class="price">0 $ / mois</p>
+      <a href="#" class="btn">Commencer</a>
+      <ul class="features">
+        <li>✅ Signalements illimités</li>
+        <li>✅ Notifications de base</li>
+        <li>❌ Tableaux de bord</li>
+        <li>❌ Statistiques consolidées</li>
+        <li>❌ API ou export</li>
+      </ul>
+    </div>
+
+    <div class="plan most-popular">
+      <h2>Premium Standard</h2>
+      <p class="price">Dès 300 $ / mois</p>
+      <a href="#" class="btn">Parler à un expert</a>
+      <ul class="features">
+        <li>✅ Tableau de bord simplifié</li>
+        <li>✅ Statistiques agrégées</li>
+        <li>✅ Rapport PDF mensuel</li>
+        <li>✅ Support initial</li>
+        <li>❌ IA avancée ou API</li>
+        <li><strong>Tarifs:</strong></li>
+        <li>&nbsp;&nbsp;• &lt; 20k : 300 $/mois</li>
+        <li>&nbsp;&nbsp;• 20k–100k : 750 $/mois</li>
+        <li>&nbsp;&nbsp;• &gt; 100k : 1 500 $/mois</li>
+      </ul>
+    </div>
+
+    <div class="plan">
+      <h2>Premium Enrichi</h2>
+      <p class="price">À partir de 5 000 $ / an</p>
+      <a href="#" class="btn">Demander une démo</a>
+      <ul class="features">
+        <li>✅ Tendances & détection IA</li>
+        <li>✅ Priorisation automatique</li>
+        <li>✅ API + exports CSV</li>
+        <li>✅ Rapports personnalisés</li>
+        <li>✅ Support stratégique</li>
+        <li><strong>Ex. : 10 000 requêtes</strong><br>= 5 000 $ (0,50 $ / requête)</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
